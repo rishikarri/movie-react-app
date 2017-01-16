@@ -17,6 +17,7 @@ class SingleMovie extends Component{
 			var url = 'https://api.themoviedb.org/3/movie/'+currentMovieId+'?api_key=fec8b5ab27b292a68294261bb21b04a5';
 
 			$.getJSON(url, (movieAPIResponse)=>{
+				console.log(movieAPIResponse);
 				var revenue = "$"+ movieAPIResponse.revenue;
 				var budget = "$"+movieAPIResponse.budget;
 
@@ -30,6 +31,7 @@ class SingleMovie extends Component{
 
 		render(){	
 			var posterPath = 'http://image.tmdb.org/t/p/original' + this.state.currentMovieData.poster_path;
+
 			return(
 					<div className="col-sm-6 col-md-3">
 						{this.props.params.id}
